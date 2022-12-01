@@ -2,6 +2,80 @@ h1{
     text-align: center;
 }
 
-.marker{
-    background-color: red;
+/*There are two main color models: the additive RGB (red, green, blue) model used in electronic devices, */
+/*and the subtractive CMYK (cyan, magenta, yellow, black) model used in print.*/
+/*green, and blue are introduced. An easy way to see this is with the CSS rgb function.*/
+.container{
+    background-color: rgb(255, 255, 255);
+
+/*Same styling and value input as margin setting*/
+/*a margin is the space around an element's border, */
+/*while padding is the space between an element's border and the element's content. */
+    padding: 10px 0;
 }
+
+
+
+
+/* THIS IS TO FORMAT ALL MARKERS BODIES */
+.marker{
+    /*The background color was applied, but since the marker */
+    /*div element is empty, it doesn't have any height by default.*/
+
+    height: 25px;
+    width: 200px;
+
+    /*To center your marker on the page, set its margin property to auto. */
+    /*This sets margin-top, margin-right, margin-bottom, and margin-left all to auto.*/
+
+    /*To add space between our three marker objects we make use of the margin auto + 10px property.*/
+    /*We esseintally use the auto to set the values of margin-top and margin-bottom as the first value to auto, and then*/
+    /*we set margin-left and margin-right as the second value (margin; auto is shorthand to set all to auto).
+      margin-top and margin-bottom        margin-left and margin-right
+              ↓                              ↓                               */
+    margin:  10px                           auto;
+}
+
+/* This section handles styling each marker */
+.one {
+    /*A function is a piece of code that can take an input and perform a specific action. */
+    /*The CSS rgb function accepts values, or arguments, for red, green, and blue, and produces a color:*/
+    /*rgb(red, green, blue);*/
+    /*background-color: red;*/
+    /*This is the RGB function controlling our colors function*/
+    /*                     ↓                         */
+    background-color: rgb(0, 0, 0);
+
+    /*Maxing it out to 255 as the first value gives us red.*/
+}
+
+.two {
+    background-color: rgb(0, 0, 0);
+}
+
+.three {
+    background-color: rgb(0, 0, 0);
+}
+
+/*
+Tertiary colors are created by combining a primary with a nearby secondary color.
+ So red max (255) + green (127) = orange as a Tertiary color
+
+ To create secondary colors we add pure maxes to create these colors:
+ so green max (255) + blue max(255) = cyan as a secondary color in our rgb function.
+
+*************** More Tertiary Colors **************************
+
+There are three more tertiary colors: chartreuse green (green + yellow), azure (blue + cyan), and rose (red + magenta).
+
+To create chartreuse green, update the rgb function in the .one rule so that red is at 127, and set green to the max value.
+
+For azure, update the rgb function in the .two rule so that green is at 127 and blue is at the max value.
+
+And for rose, which is sometimes called bright pink, update the rgb function in the .three rule so that blue is at 127 and red is at the max value.
+
+
+
+
+
+*/
