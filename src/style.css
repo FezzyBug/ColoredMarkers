@@ -36,6 +36,53 @@ h1{
     margin:  10px                           auto;
 }
 
+/** Marker Cap selection (pushes the body over to the right) */
+
+.cap {
+    width: 60px;
+    height: 25px;
+}
+
+/** Marker sleeve selection */
+.sleeve{
+    background-color: rgba(255,255,255, 50%);
+    width: 110px;
+    height: 25px;
+    opacity: 0.5;
+
+
+    /*With CSS, you can control all aspects of an element's border, and set the border on all sides,
+    or just one side at a time. For a border to be visible, you need to set its width and style.
+    ↓ STEP 1
+    border-left-width: 10px;
+    ↓ STEP 2
+    Borders have several styles to choose from. You can make your border a solid line,
+    but you can also use a dashed or dotted line if you prefer. Solid border lines are probably the most common.
+    border-left-style: solid;
+    ↓ STEP 3
+    Border is set to black is used by default.
+    border-left-color: black;
+
+    The border-left shorthand property lets you to set the left border's width, style, and color at the same time.
+    border-left: width style color;
+
+    you can change the border style to double solid borders = double for style;
+    */
+
+    border-left: 10px double rgba(0, 0, 0, 0.75);
+
+
+}
+
+/** Rule set to manage our cap and sleeve elements as they are block elements that stack on top of each other
+
+ - We use the inline block elements to handle positioning of our to block divs inline with eachother
+ */
+.cap, .sleeve{
+    display: inline-block;
+
+}
+
 /* This section handles styling each marker */
 .red {
     /*A function is a piece of code that can take an input and perform a specific action. */
@@ -56,14 +103,40 @@ h1{
     /*so changing background-color to background*/
     /*                                      Color stop ↓                                          */
     background: linear-gradient(rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27));
+
+
+    /*The box-shadow property lets you apply one or more shadows around an element. Here is basic syntax:
+    box-shadow: offsetX offsetY color;
+
+    A simple red shadow around your marker that's 5 pixels to the right, and 5 pixels down with the setting we just set
+    to position your shadow on the opposite side we use -px to move either down or right.
+
+    box-shadow:   5px 5px red;
+    */
+
+    /*blurRadius value for the box-shadow property:*/
+    /*box-shadow: offsetX offsetY blurRadius color;*/
+    /*If a blurRadius value isn't included, it defaults to 0 and produces sharp edges. */
+    /*The higher the value of blurRadius, the greater the blurring effect is.*/
+
+    box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8);
+
 }
 
 .green {
     background: linear-gradient( #55680D, #71F53E, #116C31);
+
+    box-shadow: 0 0 20px 0 #3B7E20CC;
 }
 
 .blue {
     background:linear-gradient(hsl(186, 76%, 16%), hsl(223, 90%, 60%),  hsl(240, 56%, 42%));
+
+    /*What if you wanted to expand the shadow out further? You can do that with the optional spreadRadius value:
+    box-shadow: offsetX offsetY blurRadius spreadRadius color;*/
+
+    box-shadow: 0 0 20px 0 hsla(223, 59%, 31%, 0.8);
+    /*refer to: https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-css-colors-by-building-a-set-of-colored-markers/step-94*/
 }
 
 
@@ -169,6 +242,30 @@ For example, in this red-black gradient, the transition from red to black takes 
 so red takes up most of the available space:
 
 linear-gradient(90deg, red 90%, black);
+
+TODO -> ***************** UNDERSTANDING OPACITY *************************
+
+Opacity describes how opaque, or non-transparent, something is.
+
+With the CSS opacity property, you can control how opaque or transparent an element is.
+
+With the value 0, or 0%, the element will be completely transparent, and at 1.0, or 100%
+
+Another way to set the opacity for an element is with the alpha channel.
+
+You're already familiar with using the rgb function to set colors.
+To add an alpha channel to an rgb color, use the rgba function instead.
+
+TODO -> ***************** Understanding Block Elements *************************
+
+when two block elements are next to each other, they stack like actual blocks.
+
+For example, your marker elements are all stacked on top of each other.
+
+Refer to step 78:
+https://www.freecodecamp.org/learn/2022/responsive-web-design/learn-css-colors-by-building-a-set-of-colored-markers/step-78
+
+
 
 
 */
